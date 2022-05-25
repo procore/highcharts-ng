@@ -35,7 +35,7 @@
     "grunt-open": "~0.2.2",
     "jasmine-core": "^2.4.1",
     "jquery": "^3.1.0",
-    "karma": "^1.1.1",
+    "karma": "^2.0.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-coverage": "^1.1.0",
     "karma-jasmine": "^1.0.2",
@@ -45,9 +45,13 @@
   },
   "scripts": {
     "build": "grunt",
-    "test": "grunt test"
+    "test": "grunt test",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "main": "./dist/highcharts-ng",
   "dependencies": {
-  }
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
